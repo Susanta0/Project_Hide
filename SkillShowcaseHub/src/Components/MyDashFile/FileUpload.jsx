@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect,} from "react";
 import { Data } from "../../db";
 import { ShimerUI } from "./ShimerUI";
 import { useDisclosure, useToast } from "@chakra-ui/react";
@@ -11,7 +11,10 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 export const FileUpload = () => {
+const navigate =useNavigate()
+
   const [imagePreview, setImagePreview] = useState(null);
   const [imageScore, setImageScore] = useState("");
 
@@ -69,7 +72,8 @@ export const FileUpload = () => {
         duration: 2000,
         isClosable: true,
       });
-    
+
+    navigate(`/signin`)
   };
 
   useEffect(() => {
